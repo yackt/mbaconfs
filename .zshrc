@@ -1,7 +1,15 @@
+export LANG=ja_JP.UTF-8
+export LESSCHARSET=utf-8
+
 # export PATH
 export PATH=$HOME/local/bin:$PATH
 export PERL_CPANM_OPT="--local-lib=$HOME/.perl-extlib"
 export PERL5LIB="$HOME/.perl-extlib/lib/perl5:$PERL5LIB"
+export PATH=$HOME/.perl-extlib/bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+export NODE_PATH=/usr/local/lib/node
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+export PATH=~/.gem/ruby/1.8/bin:$PATH
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -57,3 +65,4 @@ if [ -f ~/.zsh/auto-fu.zsh ]; then
 	zstyle ':completion:*' completer _oldlist _complete
 fi
 eval "$(rbenv init -)"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
