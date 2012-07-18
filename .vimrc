@@ -127,6 +127,11 @@ set background=dark
 " colorscheme
 colorscheme xoria256
 
+" syntax
+if &t_Co > 1
+	syntax enable
+endif
+
 " statusline setting
 set laststatus=2
 
@@ -142,6 +147,11 @@ set textwidth=0
 
 " encoding
 :set encoding=utf-8
+
+" settin for js
+let $JS_CMD='node'
+autocmd FileType javascript :compiler gjslint
+autocmd QuickFixCmdPost make copen
 
 " --- about fold settings ---
 " save fold settings
@@ -188,6 +198,10 @@ NeoBundle 'Shougo/neocomplcache-snippets-complete.git'
 NeoBundle 'thinca/vim-quickrun.git'
 NeoBundle 'koron/dicwin-vim.git'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'jsx/jsx.vim.git'
+NeoBundle 'JavaScript-syntax'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'digitaltoad/vim-jade.git'
 
 filetype plugin on
 filetype indent on
