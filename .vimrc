@@ -110,27 +110,14 @@ augroup END
 hi CursorLine ctermbg=black guibg=black
 
 " --- about tab, indent, space ---
-" tab and indent
-set tabstop=4 shiftwidth=4 softtabstop=0
+" tab indent
+setl tabstop=4
+setl shiftwidth=4
+setl softtabstop=0
 
 " tab and space of eol
 set list
 set listchars=tab:^\ ,trail:~
-
-" --- about colors ---
-" 256 colors
-set t_Co=256
-
-" background
-set background=dark
-
-" colorscheme
-colorscheme xoria256
-
-" syntax
-if &t_Co > 1
-	syntax enable
-endif
 
 " statusline setting
 set laststatus=2
@@ -146,12 +133,7 @@ set formatoptions=q
 set textwidth=0
 
 " encoding
-:set encoding=utf-8
-
-" settin for js
-let $JS_CMD='node'
-autocmd FileType javascript :compiler gjslint
-autocmd QuickFixCmdPost make copen
+set encoding=utf-8
 
 " --- about fold settings ---
 " save fold settings
@@ -198,11 +180,26 @@ NeoBundle 'Shougo/neocomplcache-snippets-complete.git'
 NeoBundle 'thinca/vim-quickrun.git'
 NeoBundle 'koron/dicwin-vim.git'
 NeoBundle 'Lokaltog/vim-powerline'
+
 NeoBundle 'jsx/jsx.vim.git'
-NeoBundle 'JavaScript-syntax'
+NeoBundle 'jelera/vim-javascript-syntax.git'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'digitaltoad/vim-jade.git'
 
 filetype plugin on
 filetype indent on
 
+" --- about colors ---
+" 256 colors
+set t_Co=256
+
+" background
+set background=dark
+
+" colorscheme
+colorscheme xoria256
+
+" syntax
+if &t_Co > 1
+	syntax enable
+endif
