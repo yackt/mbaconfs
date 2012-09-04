@@ -128,13 +128,70 @@ set number
 " setting for json
 map <Leader>j !python -m json.tool<CR>
 
+" setting for perl tidy
+map <Leader>pt !perltidy<CR>
+
 " prevent automatic line feed
 set formatoptions=q
 set textwidth=0
 
 " encoding
 set encoding=utf-8
-set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932
+"set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932
+
+" ambiwidth
+set ambiwidth=double
+
+" setting for quickrun sql
+let g:quickrun_config = {}
+let g:quickrun_config['sql'] = {
+			\ 'command': 'mysql',
+			\ 'exec': ['%c %o < %s'],
+			\ 'cmdopt': '%{MakeMySQLCommandOptions()}',
+			\ }
+
+let g:mysql_config_host = 'localhost'
+let g:mysql_config_port = '30000'
+let g:mysql_config_user = 'root'
+function! MakeMySQLCommandOptions()
+	if !exists("g:mysql_config_host")
+		let g:mysql_config_host = input("host> ")
+	endif
+	if !exists("g:mysql_config_port")
+		let g:mysql_config_port = input("port> ")
+	endif
+	if !exists("g:mysql_config_user")
+		let g:mysql_config_user = input("user> ")
+	endif
+	if !exists("g:mysql_config_pass")
+		let g:mysql_config_pass = inputsecret("password> ")
+	endif
+	if !exists("g:mysql_config_db")
+		let g:mysql_config_db = input("database> ")
+	endif
+
+	let optlist = []
+	if g:mysql_config_user != ''
+		call add(optlist, '-u ' . g:mysql_config_user)
+	endif
+	if g:mysql_config_host != ''
+		call add(optlist, '-h ' . g:mysql_config_host)
+	endif
+	if g:mysql_config_pass != ''
+		call add(optlist, '-p' . g:mysql_config_pass)
+	endif
+	if g:mysql_config_port != ''
+		call add(optlist, '-P ' . g:mysql_config_port)
+	endif
+	if exists("g:mysql_config_otheropts")
+		call add(optlist, g:mysql_config_otheropts)
+	endif
+
+	call add(optlist, g:mysql_config_db)
+	return join(optlist, ' ')
+endfunction
+
+noremap <silent> <Leader>h :QuickRun sql<CR>
 
 " --- about fold settings ---
 " save fold settings
@@ -185,7 +242,12 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'jsx/jsx.vim.git'
 NeoBundle 'jelera/vim-javascript-syntax.git'
 NeoBundle 'pangloss/vim-javascript'
+
+" for template
 NeoBundle 'digitaltoad/vim-jade.git'
+NeoBundle 'uggedal/jinja-vim'
+NeoBundle 'motemen/xslate-vim'
+NeoBundle 'gurisugi/microtemplate.vim'
 
 filetype plugin on
 filetype indent on

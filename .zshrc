@@ -3,18 +3,11 @@ export LESSCHARSET=utf-8
 
 # export PATH
 export PATH=$HOME/local/bin:$PATH
-export PERL_CPANM_OPT="--local-lib=$HOME/.perl-extlib"
-export PERL5LIB="$HOME/.perl-extlib/lib/perl5:$PERL5LIB"
-export PATH=$HOME/.perl-extlib/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 export NODE_PATH=/usr/local/lib/node
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
-export PATH=~/.gem/ruby/1.8/bin:$PATH
+export BYOBU_PREFIX=$(brew --prefix)
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -56,13 +49,5 @@ kterm*|xterm*)
 	;;
 esac
 
-if [ -f ~/.zsh/auto-fu.zsh ]; then
-	source ~/.zsh/auto-fu.zsh
-	function zle-line-init () {
-		auto-fu-init
-	}
-	zle -N zle-line-init
-	zstyle ':completion:*' completer _oldlist _complete
-fi
-eval "$(rbenv init -)"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+source ~/perl5/perlbrew/etc/bashrc
+
