@@ -111,9 +111,10 @@ hi CursorLine ctermbg=black guibg=black
 
 " --- about tab, indent, space ---
 " tab indent
-setl tabstop=4
-setl shiftwidth=4
-setl softtabstop=0
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
+set expandtab
 
 " tab and space of eol
 set list
