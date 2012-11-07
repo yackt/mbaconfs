@@ -1,0 +1,44 @@
+delete seriously? yes
+shell sudo rm -rf %s
+search ranger
+h
+vim .vimrc
+e .vimrc
+search mba
+search .bash_
+search Dro
+delete 
+shell git diff
+search camera
+shell open
+shell open %s
+tab_new 
+search usr
+search .config
+cd .config/ranger
+rename wons.py
+rename rc.conf
+shell vim make_old_data.pl
+shell perl make_old_data.pl
+shell perl upgrade_database.pl
+shell perl insert_default_data.pl
+shell vim Job.pm
+shell git status
+shell vim Category.pm
+vim make_second_genre.py
+shell vim make_second_genre.py
+shell vim genre_tree.py
+shell python genre_tree.py
+shell vim check_genre.py
+rename Funcs.py
+shell vim memo.txt
+shell vim tmp.py
+shell tmp.py
+shell vim p4.py
+shell vim p7.py
+open_with 
+open_with vim
+
+delete seriously? y
+mkdir deprecated_files
+delete
