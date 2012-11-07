@@ -143,6 +143,9 @@ set encoding=utf-8
 " ambiwidth
 set ambiwidth=double
 
+" setting for clipboard
+set clipboard=unnamed
+
 " setting for quickrun sql
 let g:quickrun_config = {}
 let g:quickrun_config['sql'] = {
