@@ -144,7 +144,7 @@ set encoding=utf-8
 set ambiwidth=double
 
 " setting for clipboard
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 
 " setting for quickrun sql
 let g:quickrun_config = {}
@@ -235,6 +235,11 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
+" open-browser
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
 "NeoBundle 'jcf/vim-latex'
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neobundle.vim.git'
@@ -242,6 +247,8 @@ NeoBundle 'Shougo/neocomplcache-snippets-complete.git'
 NeoBundle 'thinca/vim-quickrun.git'
 NeoBundle 'koron/dicwin-vim.git'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'kana/vim-fakeclip'
+NeoBundle 'tyru/open-browser.vim'
 
 NeoBundle 'jsx/jsx.vim.git'
 NeoBundle 'jelera/vim-javascript-syntax.git'
