@@ -120,6 +120,10 @@ set expandtab
 set list
 set listchars=tab:^\ ,trail:~
 
+" setting for cursor
+nnoremap j gj
+nnoremap k gk
+
 " statusline setting
 set laststatus=2
 
