@@ -1,0 +1,10 @@
+[user]
+    name = gurisugi
+    email = gurisugi@gmail.com
+[color]
+    ui = true
+[core]
+    editor = vim -c \"set fenc=utf-8\"
+    excludesfile = /Users/gurisugi/.gitignore
+[push]
+	default = simple
