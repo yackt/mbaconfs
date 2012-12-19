@@ -221,15 +221,6 @@ smap <C-k>	<Plug>(neocomplcache_snippets_expand)
 " powerline
 let g:Powerline_symbols = 'fancy'
 
-"" vim-latex
-"let tex_flavor = 'latex'
-"set grepprg=grep\ -nH\ $*
-"set shellslash
-"let g:Tex_DefaultTargetFormat = 'pdf'
-"let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
-"let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
-"let g:Tex_FormatDependency_pdf = 'dvi,pdf'
-
 " neobundle
 set nocompatible
 filetype off
@@ -244,10 +235,10 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
-"NeoBundle 'jcf/vim-latex'
+NeoBundle 'jcf/vim-latex'
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neobundle.vim.git'
-NeoBundle 'Shougo/neocomplcache-snippets-complete.git'
+NeoBundle 'Shougo/neosnippet.git'
 NeoBundle 'thinca/vim-quickrun.git'
 NeoBundle 'koron/dicwin-vim.git'
 NeoBundle 'Lokaltog/vim-powerline'
@@ -256,7 +247,6 @@ NeoBundle 'tyru/open-browser.vim'
 
 NeoBundle 'jsx/jsx.vim.git'
 NeoBundle 'jelera/vim-javascript-syntax.git'
-NeoBundle 'pangloss/vim-javascript'
 
 " for template
 NeoBundle 'digitaltoad/vim-jade.git'
@@ -266,6 +256,15 @@ NeoBundle 'gurisugi/microtemplate.vim'
 
 filetype plugin on
 filetype indent on
+
+" --- about vim-latex ---
+let tex_flavor = 'latex'
+set grepprg=grep\ -nH\ $*
+set shellslash
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 
 " --- about colors ---
 " 256 colors
