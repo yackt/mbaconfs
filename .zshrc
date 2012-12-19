@@ -4,6 +4,8 @@ export EDITOR=vim
 
 # export PATH
 export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/local/sbin:$PATH
+export PATH=/usr/texbin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 export PATH=$HOME/local/Cellar/mysql/5.5.25a/bin:$PATH
