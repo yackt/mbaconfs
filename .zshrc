@@ -12,7 +12,6 @@ export PATH=$HOME/local/Cellar/mysql/5.5.25a/bin:$PATH
 export NODE_PATH=/usr/local/lib/node
 export BYOBU_PREFIX=$(brew --prefix)
 
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
